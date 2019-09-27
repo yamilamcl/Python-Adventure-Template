@@ -1,49 +1,35 @@
 __author__ = 'Les Pounder'
 
-#The lines below import modules of code into our game, in particular these import time functions to allow us to pause and stop the game, and random provides a method of choosing random numbers or characters.
+"""
+    The lines below import modules of code into our game,
+    in particular these import time functions allow us to pause and stop the game,
+    and random provides a method of choosing random numbers or characters.
+"""
 from time import *
 from random import *
 import os,sys
+from art import *
 
-#This is a function, we use it to do lots of things and then call it by it's name later on
-#To create a function we use "def name():" where name can be anything.
-
-def clear_screen():  #Simple function that clears the screen
+"""
+    Simple function that clears the terminal screen
+"""
+def clear_screen():
     os.system('cls' if os.name=='nt' else 'clear')
 
 def title():
-     print ("   __                           _          __                                  ")
-     print ("  / /  ___  __ _  ___ _ __   __| |   ___  / _|   /\  /\___ _ __ ___   ___  ___ ")
-     print (" / /  / _ \/ _` |/ _ \ '_ \ / _` |  / _ \| |_   / /_/ / _ \ '__/ _ \ / _ \/ __|")
-     print ("/ /__|  __/ (_| |  __/ | | | (_| | | (_) |  _| / __  /  __/ | | (_) |  __/\__ \ ")
-     print ("\____/\___|\__, |\___|_| |_|\__,_|  \___/|_|   \/ /_/ \___|_|  \___/ \___||___/")
-def castle():
-
-    print ("*                                 |>>>                    +        ")
-    print ("+          *                      |                   *       +")
-    print ("                    |>>>      _  _|_  _   *     |>>>		   ")
-    print ("           *        |        |;| |;| |;|        |                 *")
-    print ("     +          _  _|_  _    \\.    .  /    _  _|_  _       +")
-    print (" *             |;|_|;|_|;|    \\: +   /    |;|_|;|_|;|")
-    print ("               \\..      /    ||:+++. |    \\.    .  /           *")
-    print ("      +         \\.  ,  /     ||:+++  |     \\:  .  /")
-    print ("                 ||:+  |_   _ ||_ . _ | _   _||:+  |       *")
-    print ("          *      ||+++.|||_|;|_|;|_|;|_|;|_|;||+++ |          +")
-    print ("                 ||+++ ||.    .     .      . ||+++.|   *")
-    print ("+   *            ||: . ||:.     . .   .  ,   ||:   |               *")
-    print ("         *       ||:   ||:  ,     +       .  ||: , |      +")
-    print ("  *              ||:   ||:.     +++++      . ||:   |         *")
-    print ("     +           ||:   ||.     +++++++  .    ||: . |    +")
-    print ("           +     ||: . ||: ,   +++++++ .  .  ||:   |             +")
-    print ("                 ||: . ||: ,   +++++++ .  .  ||:   |        *")
-    print ("                 ||: . ||: ,   +++++++ .  .  ||:   |")
+    print(text2art('Earth', font='alpha'))
+    print(text2art('  Lab', font='alpha'))
+    print(text2art(' Hero', font='alpha'))
 
 def north():
     print ("To go north press n then enter")
+
 def east():
     print ("To go east press e then enter")
+
 def south():
     print ("to go south press s then enter")
+
 def west():
     print ("To go west press w then enter")
 
@@ -54,8 +40,8 @@ def setup():
     global HP
     global MP
     #Our variable "name" is used to store our name, captured by keyboard input.
-    name = input("What is your name warrior? ")
-    #randint is a great way of adding some variety to your players statistics.
+    name = input("What is your name, earth hero?")
+    #randint is a great way of adding some variety to your players statistics through randomness
     HP = randint(5,20)
     MP = randint(5,20)
 
@@ -91,10 +77,11 @@ def enemy():
     print ("Your enemy has %s Magic Points" % str(enemyMP))
 
 
-#We now use our functions in the game code, we call the title, the castle picture and then ask the game to run the setup for our character.
+"""
+    We now use our functions in the game code, we call functions title() and setup() for our character.
+"""
 clear_screen()
 title()
-castle()
 setup()
 global name
 global HP
