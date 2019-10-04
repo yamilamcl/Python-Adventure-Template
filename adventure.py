@@ -88,7 +88,7 @@ global HP
 global MP
 global move
 global enemyHP
-print ("Welcome to the land of Narule, %s" % name)
+print ("Welcome to the land of Delicacies, %s" % name)
 #Sleep is Python's way of pausing the game for a specified number of seconds
 sleep(2)
 #Below we are using the helper functions to join a string of text to an integer via the str() helper.
