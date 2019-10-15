@@ -40,7 +40,7 @@ def setup():
     global HP
     global MP
     #Our variable "name" is used to store our name, captured by keyboard input.
-    name = input("What is your name, earth hero?")
+    name = input("What is your name, gingerbread man?")
     #randint is a great way of adding some variety to your players statistics through randomness
     HP = randint(5,20)
     MP = randint(5,20)
@@ -100,15 +100,20 @@ print ("Your magic skill is" + " " + str(MP))
 print ("Would you like to venture out into the land? Press y then enter to continue")
 #Below we use input to ask for user input, and if it is equal to y, then the code underneath is run.
 if input() == "y":
-    print ("You are in your home, with a roaring fireplace in front of you, above the fire you can see your sword and shield")
-    print ("Would you like to take your sword and shield? Press y then enter to continue")
+    print ("You are in your home, with a roaring fireplace in front of you, above the fire you can see your baguette and pizza")
+    print ("Would you like to take your baguette and pizza or would you like to take your marshmallow gun? To take your baguette and pizza, press y then enter to continue. If you want to take the marshmallow gun press m.")
     if input() == "y":
         #This is a list, and it can store many items, and to do that we "append" items to the list.
         weapons = []
-        weapons.append("sword")
-        weapons.append("shield")
+        weapons.append("baguette")
+        weapons.append("pizza")
         print ("You are now carrying your %s and your %s" % (weapons[0], weapons[1]))
-        print ("Armed with your %s and %s you swing open the door to your home and see a green valley gleaming in the sunshine." % (weapons[0], weapons[1]))
+        print ("Armed with your %s and %s you swing open the door to your delicious candy home and see a vast vally of licorice string gleaming in the sunshine." % (weapons[0], weapons[1]))
+    if input () == "m":
+        weapons = []
+        weapons.append("marshmallow gun")
+        print ("You are now carrying your %s" % (weapons[2]))
+        print ("Armerd with your %s you swing open the door to your delicous candy home and see a vast valley of licorice string gleaming in the sunshine." % (weapon[2]))
     else:
         print ("You choose not to take your weapons")
         print ("Armed with your sense of humour, You swing open the door to see a green valley full of opportunity awaiting you.")
@@ -146,7 +151,7 @@ if fight == "y":
     while HP > 0:
 #This loop will only work while our characters HP is greater than 0.
         hit = randint(0,5)
-        print ("You swing your sword and cause %s of damage" % str(hit))
+        print ("You swing your baguette and cause %s of damage" % str(hit))
         enemyHP = enemyHP - hit
         print (enemyHP)
         enemyhit = randint(0,5)
